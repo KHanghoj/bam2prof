@@ -1066,7 +1066,7 @@ int main (int argc, char *argv[]) {
 
 	if(hFormat){
           if (noChangeFormat)
-	    file5pFP<<""<<printIntAsWhitePaddedString(l,int(log10(lengthMaxToPrint))+1);
+	    file5pFP<<l;
           else
             file5pFP<<""<<printIntAsWhitePaddedString(l,int(log10(lengthMaxToPrint))+1)<<"\t";
 	}
@@ -1086,8 +1086,7 @@ int main (int argc, char *argv[]) {
 		totalObs+=(*typesOfDimer5pToUse)[l][4*n1+n2];
 	    }
 	    for(int n2=0;n2<4;n2++){   
-		if(n1==n2)
-                  
+		if(n1==n2)           
 		    continue;
 		if(allStr){
 		    if(dpFormat)
@@ -1095,7 +1094,7 @@ int main (int argc, char *argv[]) {
 		    else
 			if(hFormat)
                           if (cFormat)
-			    file5pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer5pToUse)[l][4*n1+n2])) ,1,0);
+			    file5pFP<<'\t'<<(*typesOfDimer5pToUse)[l][4*n1+n2];
                           else
 			    file5pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer5pToUse)[l][4*n1+n2])/double(totalObs)-errorToRemove) ,1,5);
 			else
@@ -1108,7 +1107,7 @@ int main (int argc, char *argv[]) {
 			    else
 				if(hFormat)
                                   if (cFormat)
-                                    file5pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer5pToUse)[l][4*n1+n2])) ,1,0);
+                                    file5pFP<<'\t'<<(*typesOfDimer5pToUse)[l][4*n1+n2];
                                   else
                                     file5pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double((*typesOfDimer5pToUse)[l][4*n1+n2])/double(totalObs)-errorToRemove),1,5);
 				else
@@ -1132,7 +1131,7 @@ int main (int argc, char *argv[]) {
 				else
 				    if(hFormat)
                                       if (cFormat)
-                                        file5pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer5pToUse)[l][4*n1+n2])) ,1,0);
+                                        file5pFP<<'\t'<<(*typesOfDimer5pToUse)[l][4*n1+n2];
                                       else
                                         file5pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double((*typesOfDimer5pToUse)[l][4*n1+n2])/double(totalObs)-errorToRemove),1,5);
 				    else
@@ -1155,7 +1154,7 @@ int main (int argc, char *argv[]) {
 				    else
 					if(hFormat)
                                           if (cFormat)
-                                            file5pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer5pToUse)[l][4*n1+n2])) ,1,0);
+                                            file5pFP<<'\t'<<(*typesOfDimer5pToUse)[l][4*n1+n2];
                                           else
                                             file5pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double((*typesOfDimer5pToUse)[l][4*n1+n2])/double(totalObs)-errorToRemove),1,5);
 					else
@@ -1250,7 +1249,7 @@ int main (int argc, char *argv[]) {
 	    // else
 	    // 	file3pFP<<"-"<<printIntAsWhitePaddedString(l,int(log10(lengthMaxToPrint)))<<"\t";
           if (noChangeFormat)
-	    file3pFP<<""<<printIntAsWhitePaddedString(l,int(log10(lengthMaxToPrint))+1);
+	    file3pFP<<l;
           else
             file3pFP<<""<<printIntAsWhitePaddedString(l,int(log10(lengthMaxToPrint))+1)<<"\t";
 	}
@@ -1279,7 +1278,7 @@ int main (int argc, char *argv[]) {
 		    else
 			if(hFormat)
                           if(cFormat)
-			    file3pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer3pToUse)[l][4*n1+n2])) ,1,0);
+                            file3pFP<<'\t'<<(*typesOfDimer3pToUse)[l][4*n1+n2];
                           else
                             file3pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer3pToUse)[l][4*n1+n2])/double(totalObs)-errorToRemove) ,1,5);
 			else
@@ -1292,7 +1291,7 @@ int main (int argc, char *argv[]) {
 			    else
 				if(hFormat)
                                   if(cFormat)
-                                    file3pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer3pToUse)[l][4*n1+n2])) ,1,0);
+                                    file3pFP<<'\t'<<(*typesOfDimer3pToUse)[l][4*n1+n2];
                                   else
                                     file3pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer3pToUse)[l][4*n1+n2])/double(totalObs)-errorToRemove) ,1,5);
 				else
@@ -1316,7 +1315,7 @@ int main (int argc, char *argv[]) {
 				else
 				    if(hFormat)
                                       if(cFormat)
-                                        file3pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer3pToUse)[l][4*n1+n2])) ,1,0);
+                                        file3pFP<<'\t'<<(*typesOfDimer3pToUse)[l][4*n1+n2];
                                       else
                                         file3pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer3pToUse)[l][4*n1+n2])/double(totalObs)-errorToRemove) ,1,5);
 				    else					
@@ -1339,7 +1338,7 @@ int main (int argc, char *argv[]) {
 				    else
 					if(hFormat)
                                           if(cFormat)
-                                            file3pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer3pToUse)[l][4*n1+n2])) ,1,0);
+                                            file3pFP<<'\t'<<(*typesOfDimer3pToUse)[l][4*n1+n2];
                                           else
                                             file3pFP<<printDoubleAsWhitePaddedString( MAX(0.0,double( (*typesOfDimer3pToUse)[l][4*n1+n2])/double(totalObs)-errorToRemove) ,1,5);
 					else					
