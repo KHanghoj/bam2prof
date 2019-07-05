@@ -1267,7 +1267,6 @@ int main (int argc, char *argv[]) {
 	for(int n1=0;n1<4;n1++){   
 	    int totalObs=0;
 	    for(int n2=0;n2<4;n2++){
-              cerr << n1 << " " << n2 << " " << (*typesOfDimer3pToUse)[l][4*n1+n2] << endl;
 		totalObs+=(*typesOfDimer3pToUse)[l][4*n1+n2];
 	    }
 
